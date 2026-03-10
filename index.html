@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzería Katty | 25 Años de Sabor Tradicional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primario: #FF5A5A;
+            --secundario: #FF8B5A;
+            --acento1: #FFA95A;
+            --acento2: #FFD45A;
+            --oscuro: #2d2d2d;
+            --blanco: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--oscuro);
+        }
+
+        /* Navegación */
+        nav {
+            background-color: var(--blanco);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primario);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--oscuro);
+            margin-left: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: var(--primario);
+        }
+
+        /* Inicio / Hero */
+        #inicio {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url("pizzeria\ katty.png");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 0 1rem;
+        }
+
+        #inicio h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge-años {
+            background: var(--primario);
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Secciones */
+        section { padding: 100px 10%; }
+
+        h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primario);
+        }
+
+        /* Menú */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .pizza-card {
+            background: var(--blanco);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 5px solid var(--acento2);
+        }
+
+        .pizza-card:hover { transform: translateY(-10px); }
+
+        .pizza-img { height: 200px; background-size: cover; background-position: center; }
+
+        .pizza-info { padding: 1.5rem; }
+
+        .pizza-info h3 { color: var(--secundario); margin-bottom: 0.5rem; }
+
+        .precio { font-weight: bold; color: var(--primario); font-size: 1.2rem; }
+
+        /* Reseñas */
+        #reseñas { background-color: #fffaf5; }
+
+        .reviews-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .review-box {
+            background: var(--blanco);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            border-left: 5px solid var(--acento1);
+        }
+
+        /* Contacto */
+        .contacto-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+        }
+
+        .info-contacto { flex: 1; min-width: 300px; }
+
+        .mapa {
+            flex: 1; min-width: 300px; height: 300px;
+            background: #eee; border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            border: 2px solid var(--acento2);
+        }
+
+        footer {
+            background: var(--oscuro);
+            color: var(--blanco);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .btn-cta {
+            background: var(--blanco);
+            color: var(--primario);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-cta:hover { background: var(--acento2); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            #inicio h1 { font-size: 2.5rem; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">PIZZERÍA KATTY</div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#reseñas">Reseñas</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <div class="badge-años">Desde 2001 compartiendo contigo</div>
+        <h1>Pizzería Katty</h1>
+        <p style="margin-bottom: 2rem; font-size: 1.3rem;">Tradición en cada rebanada</p>
+        <a href="#menu" class="btn-cta">Ver Menú</a>
+    </section>
+
+    <section id="menu">
+        <h2>Elige tu Pizza</h2>
+        <div class="menu-grid">
+            <div class="pizza-card">
+                <div class="pizza-img" style="background-image: url('https://images.unsplash.com/photo-1574071318508-1cdbad80ad38?auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="pizza-info">
+                    <h3>Katty Especial</h3>
+                    <p>Nuestra pizza insignia con ingredientes secretos de la casa.</p>
+                    <p class="precio">$12.00</p>
+                </div>
+            </div>
+            <div class="pizza-card">
+                <div class="pizza-img" style="background-image: url('https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="pizza-info">
+                    <h3>Pepperoni Tradicional</h3>
+                    <p>El sabor clásico que nos ha acompañado por 25 años.</p>
+                    <p class="precio">$14.50</p>
+                </div>
+            </div>
+            <div class="pizza-card">
+                <div class="pizza-img" style="background-image: url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=60');"></div>
+                <div class="pizza-info">
+                    <h3>Vegetales Frescos</h3>
+                    <p>Selección diaria de vegetales de la huerta local.</p>
+                    <p class="precio">$13.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reseñas">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <div class="reviews-container">
+            <div class="review-box">
+                "Pizzería Katty es el lugar de mis domingos familiares desde que era niña."
+                <br><br><strong>- Ana L.</strong>
+            </div>
+            <div class="review-box">
+                "25 años de sabor inigualable. La masa es simplemente perfecta."
+                <br><br><strong>- Pedro S.</strong>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto y Ubicación</h2>
+        <div class="contacto-wrapper">
+            <div class="info-contacto">
+                <h3>Visita Pizzería Katty</h3>
+                <p>📍 Calle Principal de la Pizza #123, Ciudad</p>
+                <br>
+                <h3>Llámanos</h3>
+                <p>📞 +51 987 654 321</p>
+                <br>
+                <h3>Horarios</h3>
+                <p>Mar - Dom: 12:00 PM - 10:00 PM</p>
+            </div>
+            <div class="mapa">
+                <p>[ Mapa de Pizzería Katty ]</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Pizzería Katty - 25 Años de Sabor Original</p>
+    </footer>
+
+</body>
+</html>
